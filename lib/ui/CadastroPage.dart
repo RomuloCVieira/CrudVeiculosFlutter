@@ -63,8 +63,8 @@ class _CadastroPageState extends State<CadastroPage> {
         }
 
         Veiculo veiculo = Veiculo();
-        veiculo.marca = modeloController.text;
-        veiculo.modelo = marcaController.text;
+        veiculo.marca = marcaController.text;
+        veiculo.modelo = modeloController.text;
         veiculo.valor = valorController.text.isNotEmpty ? double.parse(valorController.text) : null;
         veiculo.ano = anoController.text.isNotEmpty ? int.parse(anoController.text) : null;
 

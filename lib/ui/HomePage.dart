@@ -124,12 +124,13 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                         children: <Widget>[
                             Expanded(
-                                child: Text(veiculo.marca ?? "", style: TextStyle(fontSize: 18),),
+                                child: Text("Marca: " + veiculo.marca ?? "", style: TextStyle(fontSize: 18),),
                             ),
                             Column(
                                 children: <Widget>[
-                                    Text(veiculo.modelo ?? ""),
-                                    Text(veiculo.ano == null ? "" : veiculo.ano.toString()),
+                                    Text("Modelo: " + veiculo.modelo ?? ""),
+                                    Text("Valor: ${veiculo.valor == null ? "" : veiculo.valor.toString()}"),
+                                    Text("Ano: ${veiculo.ano == null ? "" : veiculo.ano.toString()}"),
                                 ],
                             ),
                         ],
@@ -142,7 +143,9 @@ class _HomePageState extends State<HomePage> {
         );
     }
 
-    void _abrirCadastroVeiculo(BuildContext context, Veiculo veiculo) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => CadastroPage(veiculo)));
+    void _abrirCadastroVeiculo(BuildContext context, Veiculo veiculo) async {
+       await Navigator.push(context, MaterialPageRoute(builder: (context) => CadastroPage(veiculo)));
+       setState(() {
+       });
     }
 }
